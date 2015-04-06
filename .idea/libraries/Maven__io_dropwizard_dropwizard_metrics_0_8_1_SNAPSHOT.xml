@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.dropwizard:dropwizard-metrics:0.8.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-metrics/0.8.1-SNAPSHOT/dropwizard-metrics-0.8.1-20150401.140110-60.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-metrics/0.8.1-SNAPSHOT/dropwizard-metrics-0.8.1-20150401.140110-60-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-metrics/0.8.1-SNAPSHOT/dropwizard-metrics-0.8.1-20150401.140110-60-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

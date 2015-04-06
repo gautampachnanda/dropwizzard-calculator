@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CalculationResultDAO</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.pachnanda.calculator.db</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CalculationResultDAO (org.pachnanda.calculator.db)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CalculationResultDAO</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.pachnanda.calculator.db;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.pachnanda.calculator.core.CalculationResult;
+<i>4</i>&nbsp;import com.google.common.base.Optional;
+<i>5</i>&nbsp;import io.dropwizard.hibernate.AbstractDAO;
+<i>6</i>&nbsp;import org.hibernate.SessionFactory;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.util.List;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;public class CalculationResultDAO extends AbstractDAO&lt;CalculationResult&gt; {
+<i>11</i>&nbsp;    public CalculationResultDAO(SessionFactory factory) {
+<b class="nc"><i>12</i>&nbsp;        super(factory);</b>
+<i>13</i>&nbsp;    }
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public Optional&lt;CalculationResult&gt; findById(Long id) {
+<b class="nc"><i>16</i>&nbsp;        return Optional.fromNullable(get(id));</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public CalculationResult create(CalculationResult calculationResult) {
+<b class="nc"><i>20</i>&nbsp;        return persist(calculationResult);</b>
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public List&lt;CalculationResult&gt; findAll() {
+<b class="nc"><i>24</i>&nbsp;        return list(namedQuery(&quot;org.pachnanda.calculator.core.CalculationResult.findAll&quot;));</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2015-04-06 23:56</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: DateNotSpecifiedFilter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.pachnanda.calculator.filter</a> ]
+</div>
+
+<h1>Coverage Summary for Class: DateNotSpecifiedFilter (org.pachnanda.calculator.filter)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DateNotSpecifiedFilter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.pachnanda.calculator.filter;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javax.ws.rs.WebApplicationException;
+<i>4</i>&nbsp;import javax.ws.rs.container.ContainerRequestContext;
+<i>5</i>&nbsp;import javax.ws.rs.container.ContainerRequestFilter;
+<i>6</i>&nbsp;import javax.ws.rs.core.HttpHeaders;
+<i>7</i>&nbsp;import javax.ws.rs.core.Response;
+<i>8</i>&nbsp;import javax.ws.rs.ext.Provider;
+<i>9</i>&nbsp;import java.io.IOException;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;@Provider
+<b class="nc"><i>12</i>&nbsp;public class DateNotSpecifiedFilter implements ContainerRequestFilter {</b>
+<i>13</i>&nbsp;    @Override
+<i>14</i>&nbsp;    public void filter(ContainerRequestContext requestContext) throws IOException {
+<b class="nc"><i>15</i>&nbsp;        String dateHeader = requestContext.getHeaderString(HttpHeaders.DATE);</b>
+<i>16</i>&nbsp;
+<b class="nc"><i>17</i>&nbsp;        if (dateHeader == null) {</b>
+<b class="nc"><i>18</i>&nbsp;            Exception cause = new IllegalArgumentException(&quot;Date Header was not specified&quot;);</b>
+<b class="nc"><i>19</i>&nbsp;            throw new WebApplicationException(cause, Response.Status.BAD_REQUEST);</b>
+<i>20</i>&nbsp;        }
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2015-04-06 23:56</div>
+</div>
+</body>
+</html>
