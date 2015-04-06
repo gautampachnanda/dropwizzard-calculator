@@ -23,8 +23,7 @@ public abstract class AbstractPojoTester {
         testValues.put(propertyType, testValue);
     }
 
-    @SuppressWarnings("deprecation")
-	@Before
+    @Before
     public void setUpTestValues() throws Exception {
         // add in further test values here.
         addTestValue(String.class, "foo");
@@ -35,7 +34,7 @@ public abstract class AbstractPojoTester {
         addTestValue(Double.class, 123.0);
         addTestValue(boolean.class, true);
         addTestValue(Boolean.class, true);
-        addTestValue(java.util.Date.class, new java.util.Date(100, 3, 4, 11, 45));
+        addTestValue(java.util.Date.class, new java.util.Date(100000000));
     }
 
     /**
@@ -69,6 +68,7 @@ public abstract class AbstractPojoTester {
                 Assert.assertEquals(readMethod.invoke(pojo), testValue);
             }
         } catch (Exception e) {
+        	e.printStackTrace();
             // ignore
         }
     }
