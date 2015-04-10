@@ -1,0 +1,8 @@
+<#-- @ftlvariable name="" type="org.pachnanda.calculator.views.ProtectedResultsView" -->
+ <html>
+    <body>
+        <#list protectedResults.results as result>
+        <p><a href="/operator/display/${result.link}">${result.name}</b></p>
+        </#list>
+    </body>
+</html>

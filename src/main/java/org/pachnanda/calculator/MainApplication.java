@@ -12,7 +12,7 @@ import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
-import org.pachnanda.calculator.auth.ExampleAuthenticator;
+import org.pachnanda.calculator.auth.SimpleAuthenticator;
 import org.pachnanda.calculator.commands.Render;
 import org.pachnanda.calculator.core.CalculationResult;
 import org.pachnanda.calculator.core.Template;
@@ -40,7 +40,7 @@ public class MainApplication extends Application<MainConfiguration> {
                 public DataSourceFactory getDataSourceFactory(MainConfiguration configuration) {
                     return configuration.getDataSourceFactory();
                 }
-           };
+            };
 
     @Override
     public String getName() {
@@ -82,13 +82,14 @@ public class MainApplication extends Application<MainConfiguration> {
         environment.healthChecks().register("template", new TemplateHealthCheck(template));
         environment.jersey().register(DateRequiredFeature.class);
 
-        environment.jersey().register(AuthFactory.binder(new BasicAuthFactory<>(new ExampleAuthenticator(),
+        environment.jersey().register(AuthFactory.binder(new BasicAuthFactory<>(new SimpleAuthenticator(),
                 "SUPER SECRET STUFF",
-               User.class)));
+                User.class)));
         environment.jersey().register(new ProtectedResource());
-        environment.jersey().register(new CalculationResource(dao,template));
+        environment.jersey().register(new CalculationResource(dao, template));
         environment.jersey().register(new CalculationResultResource(dao));
         environment.jersey().register(new ViewResource());
-       environment.jersey().register(new FilteredResource());
+        environment.jersey().register(new FilteredResource());
+        environment.jersey().register(new ProtectedViewResource());
     }
 }
